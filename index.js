@@ -1,6 +1,8 @@
 import chalk from 'chalk';
 import readline from 'readline-sync';
 
+// adicionar mais cores
+const red = chalk.red;
 let props = [];
 let input = '';
 
@@ -11,17 +13,17 @@ while (input != 'sair') {
     )
     .toLowerCase();
 
+  if (input === 'sair') {
+    console.log(`\n ${props.sort().join('\n')}`);
+  }
+
   if (input != '' && !props.includes(input)) {
     props.push(input);
   } else if (props.includes(input)) {
     console.log(
-      '\nA propriedade digitada já existe na lista. Tente adicionar outra.\n'
+      red(
+        '\nA propriedade digitada já existe na lista. Tente adicionar outra.\n'
+      )
     );
-  } /* else {
-    console.log(props.sort().join('\n'));
-  } */
-
-  if (input === 'sair') {
-    console.log(props.sort().join('\n'));
   }
 }
