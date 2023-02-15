@@ -13,5 +13,15 @@ while (input != 'sair') {
 
   if (input != '' && !props.includes(input)) {
     props.push(input);
+  } else if (props.includes(input)) {
+    console.log(
+      '\nA propriedade digitada já existe na lista. Tente adicionar outra.\n'
+    );
+  } /* else {
+    console.log(props.sort().join('\n'));
+  } */
+
+  if (input === 'sair') {
+    console.log(props.sort().join('\n'));
   }
 }
